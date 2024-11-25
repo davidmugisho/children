@@ -5,10 +5,14 @@ import { Image } from 'expo-image';
 
 type Propos = {
     imgSource : string;
+    selectedImage?: string;
+
 }; 
 
 
-export default function ImageViewer({ imgSource } : Propos) {
+export default function ImageViewer({ imgSource , selectedImage } : Propos) {
+    const imageSource = selectedImage ? { uri: selectedImage } : imgSource;
+
     return <Image source={imgSource} style={styles.image}/>
 }
 const styles = StyleSheet.create({

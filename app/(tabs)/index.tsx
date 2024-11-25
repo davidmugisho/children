@@ -13,6 +13,7 @@ export default function Index() {
 
   const PickImageASync = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ['images'],
       allowsEditing: true,
       quality: 1, 
     }); 
@@ -34,7 +35,7 @@ export default function Index() {
     </View>
 
       <View style={styles.footerContainer}>
-        <Button 
+        <Button  theme="primary"
         onPress={PickImageASync}
         label="chose a photo " />
         <Button label="use this  photo "/>
