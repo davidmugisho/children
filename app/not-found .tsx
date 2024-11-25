@@ -7,7 +7,7 @@ export default function RootLayout() {
   <Stack.Screen options={{
     title:"Oops! Not Found"
   }}/>
-  <View style={styles.container}></View>
+  <View style={styles.container}> </View>
   <Link href={"/"} style={styles.button}>Go back to Main Screen</Link>
 </Stack>
   );
