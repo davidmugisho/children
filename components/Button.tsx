@@ -6,29 +6,24 @@ import {FontAwesome} from '@expo/vector-icons'
 
 type Propos = {
     label: string;
-    theme? : "primary"
-}; 
+    onPress?:  () => void;
+};
 
-
-export default function Button({ label , theme} : Propos) {
-    if(theme === 'primary'){
+export default function Button({ label , onPress } : Propos) {
     return(
-        <View style={[styles.buttonContainer , {borderWidth: 4, borderColor:'#ffd33db', borderRadius: 18, }]}>
+        <View style={styles.buttonContainer }>
             <Pressable style={styles.button}
-            onPress={() => alert("you press a  button") }>
-                <FontAwesome
-                // name="picture-0"
-                size={18}
-                color="#25292e"
-                style={styles.buttonIcon}
-                />
-                <Text style={[styles.buttonLabel ,{color:"#25292e"}]}>{label}</Text>
+            onPress={onPress}>
+               
+                <Text style={styles.buttonLabel }>{label}</Text>
             </Pressable>
         </View>
     ) 
 
 }
-}
+
+
+
 const styles = StyleSheet.create({
     buttonContainer :{
         width:320,
